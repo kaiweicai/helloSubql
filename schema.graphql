@@ -1,7 +1,10 @@
+type Account @entity {
+  id: ID! #this primary key is set as the toAddress
+}
+
 type Transfer @entity {
-  id: ID! # id field is always required and must look like this
-  amount: BigInt # Amount that is transferred
-  blockNumber: BigInt # The block height of the transfer
-  from: String! # The account that transfers are made from
-  to: String! # The account that transfers are made to
+  id: ID!
+  amount: BigInt
+  blockNumber: BigInt
+  to: Account! # receiving address
 }
